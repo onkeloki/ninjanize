@@ -1,0 +1,62 @@
+<html>
+	<head>
+		
+		<title>Ninjanize your Name</title>
+	</head>
+		
+<style type="text/css">
+	 * {font-family:Arial}
+	#outp {
+		font-weight:bold;
+		
+	}
+	
+	</style>
+<script type="text/javascript">
+	
+	function keyup(){
+		ninjanize(document.getElementById("input").value);
+		
+		document.getElementById("outp").innerHTML = ret;
+		
+	}
+	
+	function ninjanize(str){
+		var lit = new Array();
+		lit["a"] ="ka";	lit["b"] ="zu";	lit["c"] ="mi";	lit["d"] ="te";	lit["e"] ="ku";	lit["f"] ="lu";	lit["g"] ="ji";	lit["h"] ="ri";	lit["i"] ="ki";	lit["j"] ="zu";	lit["k"] ="me";	lit["l"] ="ta";	lit["m"] ="rin";		lit["n"] ="to";	lit["o"] ="mo";	lit["p"] ="no";
+		lit["q"] ="ke";
+		lit["r"] ="shi";
+		lit["s"] ="ari";
+		lit["t"] ="chi";
+		lit["u"] ="do";
+		lit["v"] ="ru";
+		lit["w"] ="mei";
+		lit["x"] ="na";
+		lit["y"] ="fu";
+		lit["z"] ="zi";
+		lit[" "] =" ";
+		ret="";
+		for(i=0; i <str.length;i++){
+			add = lit[str[i].toLowerCase()];
+			
+			if(add != undefined){ ret += add;};
+		} 
+		
+		ret = ret.substr(0, 1).toUpperCase() + ret.substr(1);
+		return ret;
+
+		
+		
+	}
+	
+	
+	
+	</script>
+
+<p>
+Your name: <input type="text"  onkeyup ="keyup()" id="input"/><br />
+Your ninja name: <span id="outp" ></span>
+</p>
+
+
+</html>
